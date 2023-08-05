@@ -1,29 +1,34 @@
+// main asigna el inicio del paquete.
 package main
 
+// "fmt" paquete importado para formatear el texto e imprimir texto en consola.
 import "fmt"
 
+// main es la clase inicial.
 func main() {
-	// Declaracion y asignacion de variables separadas.
+	// nombre Variable declarada y asignado el valor en una línea diferente.
 	var nombre string
 	nombre = "Miguel"
 
-	// Declaracion y asignación en la misma línea.
+	// apellido Declara la variable y asigna valor en la misma línea.
 	var apellido string = "Portillo"
 
-	// Declaracion y asignación de tipo Dinámica y con el método de variable corta (:=)
+	// edad Declara y asigna valor en la primera línea con el método de variable corta (:=).
 	edad := 29
 
-	// Reasignación de Valores.
+	// nombre Reasignando el nombre.
 	nombre = "Miguel Alejandro"
+
+	// apellido Reasignando el apellido.
 	apellido = "Portillo Boscán"
 
-	//declaración en bloque.
+	// Declaración en bloque.
 	var (
 		altura = 1.63
 		peso   = 93
 	)
 
-	//Uso de las variables antes declaradas y asignadas en una impreson de consola.
+	// Uso de las variables antes declaradas y asignadas en una impreson de consola.
 	fmt.Println("Nombres: "+nombre, "Apellidos: "+apellido, "Altura: ", edad, altura, peso)
 
 }
