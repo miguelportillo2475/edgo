@@ -74,6 +74,15 @@ func main() {
 	// 6:) <=	Menor o igual que...
 	fmt.Println("Menor o Igual(<=):", e <= e)
 
-	// Operadores Lógicos.
+	// Operadores Lógicos. ( &&=y / ||=o / !=onario o de negación )
+	// edad Alamacena la edad del usuario.
+	var edad byte = 29
+	// Operador lógico ( y )
+	fmt.Println("Es un adulto:", edad >= 18 && edad <= 60)
 
+	// Operador lógico ( o )
+	fmt.Println("Es niño o anciano:", edad < 18 || edad > 60)
+
+	// Operador lógico Onario ( ! )
+	fmt.Println("Onario para 4 mayor que 3:", !(4 > 3))
 }
