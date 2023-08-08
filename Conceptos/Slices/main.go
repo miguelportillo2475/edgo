@@ -76,7 +76,11 @@ func main() {
 	fmt.Println("Valor Cero fruits:", fruits == nil)
 
 	// Los valores inicializados (Con llaves) dan como resultado (false)
-	valorCero := make([]string, 0, 3)
-	fmt.Println("Valor Cero:", valorCero == nil)
+	valorCerofalse := []string{}
+	fmt.Println("Valor Cero Inicializado:", valorCerofalse == nil)
+
+	// valorCerotrue Comparando con nil para ver el valor cero
+	var valorCerotrue []string
+	fmt.Println("Valor Cero Verdadero:", valorCerotrue == nil)
 
 }
