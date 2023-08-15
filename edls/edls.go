@@ -1,6 +1,8 @@
 package main
 
-// File types
+import "time"
+
+// File Types
 const (
 	fileRegular int = iota
 	fileDirectory
@@ -10,19 +12,45 @@ const (
 	fileLink
 )
 
-// File Extensions
-
+// File Extension
 const (
-	exe  = ".exe"
-	deb  = ".deb"
-	zip  = ".zip"
-	tar  = ".tar"
-	rar  = ".rar"
-	gz   = ".gz"
-	png  = ".png"
-	jpg  = ".jpg"
-	jpeg = ".jpeg"
-	bmp  = ".bmp"
-	gif  = ".gif"
-	svn  = ".svn"
+	executable = ".exe"
+	debian     = ".deb"
+	archpkg    = ".zst"
+	zip        = ".zip"
+	gz         = ".gz"
+	tar        = ".tar"
+	rar        = ".rar"
+	png        = ".png"
+	jpg        = ".jpg"
+	jpeg       = ".jpeg"
+	gif        = ".gif"
 )
+
+// File Structure
+type file struct {
+	name      string
+	fileType  int
+	isDir     bool
+	isHidden  bool
+	userName  string
+	groupName string
+	size      int64
+	modTime   time.Time
+	mode      string
+}
+
+type styleFileType struct {
+	icon   string
+	color  string
+	symbol string
+}
+
+var mapStyleFileType = map[int]styleFileType{
+	fileRegular:    {icon: "docicon"},
+	fileDirectory:  {icon: "FolderIcon", color: "Blue", symbol: "/"},
+	fileExecutable: {icon: "execIcon", color: "Green", symbol: "*"},
+	fileCompress:   {icon: "CompressIcon", color: "red"},
+	fileImage:      {icon: "ImageIcon", color: "Magenta"},
+	fileLink:       {icon: "LinkIcon", color: "Cyan"},
+}
