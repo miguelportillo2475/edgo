@@ -40,12 +40,14 @@ type file struct {
 	mode      string
 }
 
+// styleFileType Opciones para dar estilos a los archivos desde el mapa.
 type styleFileType struct {
 	icon   string
 	color  string
 	symbol string
 }
 
+// mapStyleFileType Es el mapa para los estilos de los tipos de archivos.
 var mapStyleFileType = map[int]styleFileType{
 	fileRegular:    {icon: "docicon"},
 	fileDirectory:  {icon: "FolderIcon", color: "Blue", symbol: "/"},
