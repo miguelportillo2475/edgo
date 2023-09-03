@@ -2,6 +2,9 @@ package main
 
 import "time"
 
+// Windows os system
+const Windows = "windows"
+
 // File Types
 const (
 	fileRegular int = iota
@@ -25,6 +28,7 @@ const (
 	jpg        = ".jpg"
 	jpeg       = ".jpeg"
 	gif        = ".gif"
+	bmp        = ".bmp"
 )
 
 // File Structure
@@ -49,10 +53,10 @@ type styleFileType struct {
 
 // mapStyleFileType Es el mapa para los estilos de los tipos de archivos.
 var mapStyleFileType = map[int]styleFileType{
-	fileRegular:    {icon: "docicon"},
-	fileDirectory:  {icon: "FolderIcon", color: "Blue", symbol: "/"},
-	fileExecutable: {icon: "execIcon", color: "Green", symbol: "*"},
-	fileCompress:   {icon: "CompressIcon", color: "red"},
-	fileImage:      {icon: "ImageIcon", color: "Magenta"},
-	fileLink:       {icon: "LinkIcon", color: "Cyan"},
+	fileRegular:    {icon: "📄 "},
+	fileDirectory:  {icon: "📁 ", color: "Blue", symbol: "/"},
+	fileExecutable: {icon: "⚙️ ", color: "Green", symbol: "*"},
+	fileCompress:   {icon: "🗃 ", color: "red"},
+	fileImage:      {icon: "📷 ", color: "Magenta"},
+	fileLink:       {icon: "📎 ", color: "Cyan"},
 }
