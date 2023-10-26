@@ -1,17 +1,26 @@
 // package main es el inicio de mi programa de go
 package main
 
-// import usando import en bloque
+// usando import en bloque
 import (
 	"fmt"
 )
 
-// func main es la funcion inicial de mi programa
+// todos lo operadores que no esten agrupados se comienzan con el nombre por ejemplo:
+// Los primeros cuatro meses
+const (
+	enero = iota + 1
+	febrero
+	Marzo
+	Abril
+)
+
+// main es la funcion inicial de mi programa
 func main() {
 
 }
 
-// func Variables es la funcion Variables
+// Funcion que contiene variables
 func Variables() {
 
 	// nombre Declaracion y asignacion de variables separadas.
