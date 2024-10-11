@@ -1,8 +1,12 @@
 package main
 
-import "time"
+import (
+	"time"
 
-// Windows os system
+	"github.com/fatih/color"
+)
+
+// Windows os System
 const Windows = "windows"
 
 // File Types
@@ -15,15 +19,18 @@ const (
 	fileLink
 )
 
-// File Extension
+// File Extensions
 const (
 	executable = ".exe"
 	debian     = ".deb"
 	archpkg    = ".zst"
+	bin        = ".bin"
 	zip        = ".zip"
-	gz         = ".gz"
-	tar        = ".tar"
 	rar        = ".rar"
+	tar        = ".tar"
+	zip7       = ".7z"
+	tgz        = ".tgz"
+	gz         = ".gz"
 	png        = ".png"
 	jpg        = ".jpg"
 	jpeg       = ".jpeg"
@@ -31,7 +38,7 @@ const (
 	bmp        = ".bmp"
 )
 
-// File Structure
+// file Estructura del archivo
 type file struct {
 	name      string
 	fileType  int
@@ -47,16 +54,25 @@ type file struct {
 // styleFileType Opciones para dar estilos a los archivos desde el mapa.
 type styleFileType struct {
 	icon   string
-	color  string
+	color  color.Attribute
 	symbol string
 }
 
-// mapStyleFileType Es el mapa para los estilos de los tipos de archivos.
-var mapStyleFileType = map[int]styleFileType{
+// mapStyleByFileType Es el mapa para los estilos de los tipos de archivos.
+var mapStyleByFileType = map[int]styleFileType{
 	fileRegular:    {icon: "📄 "},
-	fileDirectory:  {icon: "📁 ", color: "Blue", symbol: "/"},
-	fileExecutable: {icon: "⚙️ ", color: "Green", symbol: "*"},
-	fileCompress:   {icon: "🗃 ", color: "red"},
-	fileImage:      {icon: "📷 ", color: "Magenta"},
-	fileLink:       {icon: "📎 ", color: "Cyan"},
+	fileDirectory:  {icon: "📁 ", color: color.FgBlue, symbol: "/"},
+	fileExecutable: {icon: "⚙️ ", color: color.FgGreen, symbol: "*"},
+	fileCompress:   {icon: "🗃 ", color: color.FgRed},
+	fileImage:      {icon: "📷 ", color: color.FgMagenta},
+	fileLink:       {icon: "📎 ", color: color.FgCyan},
 }
+
+var (
+	blue    = color.New(color.FgBlue).Add(color.Bold).SprintFunc()
+	green   = color.New(color.FgGreen).Add(color.Bold).SprintFunc()
+	red     = color.New(color.FgRed).Add(color.Bold).SprintFunc()
+	magenta = color.New(color.FgMagenta).Add(color.Bold).SprintFunc()
+	cyan    = color.New(color.FgCyan).Add(color.Bold).SprintFunc()
+	yellow  = color.New(color.FgYellow).Add(color.Bold).SprintFunc()
+)
